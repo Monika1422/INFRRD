@@ -1,0 +1,75 @@
+.container {
+    padding:10px 20px;
+    margin: 0 auto;
+    background:#f2f6fc;
+}
+
+.row {
+    width:100%;
+ 
+}
+.headings {
+    background: #2100d40f;
+    font-weight: bold;
+}
+.headings, .training-data {
+    display:flex;
+    padding:5px 20px;
+}
+.headings > div {
+    margin:0px 2%;
+    width:160px;
+}
+
+.training-data > div {
+    margin:0px 2%;
+    width:160px;
+}
+
+.training-container {
+    background-color: white;
+    box-shadow: 2px 3px 3px lightgray;
+    border-radius: 6px;
+    margin-top:15px;
+}
+.department-name {
+    padding: 7px 28px;
+    color: white;
+    background: #3572b1;
+}
+
+.schedule-btn {
+    border-radius: 50%;
+    border: none;
+    font-size: 30px;
+    background: orangered;
+    color: wheat;
+    width: 40px;
+    height: 40px;
+    box-shadow: 2px 3px 3px #ff4500cc;
+    cursor:pointer;
+}
+
+.btn {
+    position: fixed;
+    bottom: 20px;
+    right: 40px;
+    font-size: 50px;
+}
+
+.search-bar {
+    padding-left:20px;
+}
+
+input {
+    margin-left:10px;
+    border-radius: 4px;
+    border: 1px solid #3572b1;
+    padding:4px;
+}
+
+
+* {
+    outline:none;
+}
+

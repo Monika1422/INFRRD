@@ -1,0 +1,60 @@
+<div class="container">
+    <div class="search-bar">
+        <label>Find by name</label>
+        <input type="text" placeholder="search by name" [(ngModel)]="searchByName">
+    </div>
+    
+    <div>
+
+        <div class="training-container" *ngFor=" let ele of listOfDepartment;let i=index;">
+            <div *ngFor="let dep of listOfBookedTrainings[ele] | filter : 'trainingName' : searchByName;let j=index;" class="row">
+                <div *ngIf="j==0" class="department-name">{{ele}}</div>
+                <div class="headings">
+                    <div>Training Name</div>
+                    <div>Description</div>
+                    <div>Durataion</div>
+                    <div>Date and Time</div>
+                    <div>Meeting Room</div>
+                    <div>Action</div>
+                </div>
+                <div class="training-data">
+                    <div>
+                        {{dep.trainingName}}
+                    </div>
+                    <div>
+                        {{dep.description}}
+                    </div>
+                    <div>
+                        {{dep.duration}}
+                    </div>
+                    <div>
+                        {{dep.date}} {{dep.time}}
+                    </div>
+                    <div>
+                        {{dep.meetingRoom}}
+                    </div>
+                    <div>
+                        <img src="../../assets/images/edit.webp"  (click)="editScheduleTrainingModal(dep)" height="30" style="cursor:pointer">
+                      
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+    
+    <div class="btn">
+        <button class="schedule-btn" (click)=openScheduleModal()>
+            +
+        </button>
+    </div>
+   
+</div>
+
+
+<app-schedule-taining-modal [openScheduleTrainingModal]="openScheduleTrainingModal"
+    [openEditScheduleTrainingModal]="openEditScheduleTrainingModal" [selectedTrainingData]="selectedTrainingData"
+    (close)=closeScheduleTrainingModal($event)>
+</app-schedule-taining-modal>

@@ -1,0 +1,42 @@
+ [
+    {
+        "trainingId":1587286443431,
+        "trainingName":"Angular.js",
+        "description":"Client-side Javascript framework",
+        "department":"Department1",
+        "duration":"1",
+        "date":"2020-04-06",
+        "time":"01:00",
+        "meetingRoom":"Mercury"
+    },
+    {
+       "trainingId":1587286487454,
+       "trainingName":"Node.js",
+       "description":"Server-side javascript framework",
+       "department":"Department2",
+       "duration":"2",
+       "date":"2020-04-21",
+       "time":"01:00",
+       "meetingRoom":"Mars"
+    },
+    {
+        "trainingId":1587288875033,
+        "trainingName":"Javascript",
+        "description":"The modern approach towards javascript",
+        "department":"Department2",
+        "duration":"3",
+        "date":"2020-04-15",
+        "time":"02:00",
+        "meetingRoom":"Earth"
+    },
+    {
+        "trainingId":1587288934950,
+        "trainingName":"Java",
+        "description":"Springboot framework",
+        "department":"Department3",
+        "duration":"5",
+        "date":"2020-04-08",
+        "time":"13:59",
+        "meetingRoom":"Mercury"
+    }
+]

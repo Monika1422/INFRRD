@@ -1,0 +1,83 @@
+<div class="modal"
+    [ngStyle]="{'display': openScheduleTrainingModal === true  || openEditScheduleTrainingModal===true ? 'block' : 'none' }">
+    <div class="modal-content">
+        <div class="modal-header">
+            <div class="close">
+                <button class="close-btn" (click)="closeModal()">x</button>
+            </div>
+        </div>
+        <div style="padding: 10px 30px;">
+            <form (ngSubmit)="openScheduleTrainingModal ? addTraining() : updateTraining()" #empForm="ngForm">
+                <div>
+                    <div><label for="empId">Training Name</label></div>
+                    <input type="text" name="trainingName" required [(ngModel)]="trainingModel.trainingName">
+                </div>
+
+                <div>
+                    <div>
+                        <label for="vehicleType">Description:</label>
+                    </div>
+                    <textarea [(ngModel)]="trainingModel.description" name="description"></textarea>
+                </div>
+
+                <div>
+                    <div>
+                        <label for="department">Department:</label>
+                    </div>
+                    <select name="department" [(ngModel)]="trainingModel.department" required>
+                        <option *ngFor="let ele of listOfdepartment">
+                            {{ele}}
+                        </option>
+                    </select>
+                </div>
+
+                <div>
+                    <div>
+                        <label for="duration">Duration:</label>
+                    </div>
+                    <select name="duration" [(ngModel)]="trainingModel.duration">
+                        <option *ngFor="let ele of duration">
+                            {{ele}}
+                        </option>
+                    </select>
+
+                </div>
+
+                <div>
+                    <div>
+                        <label>Date and time:</label>
+                    </div>
+
+                    <input type="Date" style="width:150px" name="date" min={{minDate}} max={{maxDate}} required
+                        [(ngModel)]="trainingModel.date">
+                    <input type="time" style="width:150px;margin-left:10px" min="09:00" max="18:00" name="time"
+                        [(ngModel)]="trainingModel.time">
+                </div>
+
+
+                <div>
+                    <div>
+                        <label for="meetingRoom">Meeting room:</label>
+                    </div>
+                    <select name="meetingRoom" required [(ngModel)]="trainingModel.meetingRoom">
+                        <option *ngFor="let meetingRoom of listOfMeetingRoom">
+                            {{meetingRoom}}
+                        </option>
+                    </select>
+                </div>
+                <div *ngIf="alertMsg!=''">{{alertMsg}}</div>
+
+                <div class="submit-btn">
+                    <button *ngIf="openScheduleTrainingModal" type="submit"
+                        [disabled]="!empForm.form.valid">Submit</button>
+                    <button *ngIf="openEditScheduleTrainingModal" type="submit"
+                        [disabled]="!empForm.form.valid">Update</button>
+
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+</div>
