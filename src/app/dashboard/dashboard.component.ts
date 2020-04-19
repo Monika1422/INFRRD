@@ -17,8 +17,9 @@ export class DashboardComponent implements OnInit {
   public searchByName:string
 
   constructor(private trainingService: TrainingService) {
-    if(!this.trainingService.getLocalStorage().length) {
-      this.trainingService.setLocalStorage(trainingData);
+    let existingData = this.trainingService.getLocalStorage();
+    if(!existingData) {
+      this.trainingService.setLocalStorage(trainingData['default']);
     }
     
    }
